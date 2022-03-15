@@ -9,9 +9,11 @@ res.json({status:"WORKING"})
 const puppeteer = require("puppeteer")
 const answer = require("prompt-sync")({sigint:true})
 let url_to_verify = answer("Digite o site desejado:")
-const browser = puppeteer.launch()
+const work = await puppeteer.launch({
+headless: true,
+args:['--no-sandbox-']
+})
 //<a class="btn btn-primary" href="https://www.xml-sitemaps.com/download/stackoverflow.com-59db74dd/sitemap.xml"><i class="material-icons">file_download</i> Download your XML sitemap file<div class="ripple-container"></div></a>
-browser.then(async(work)=>{
     const page = await work.newPage();
         await page.goto(url_to_verify)
         let words = await page.evaluateHandle((body)=>{
@@ -81,8 +83,6 @@ browser.then(async(work)=>{
             console.log(r)
         })
         await words.dispose()
-
-})
 
 app.listen(process.env.PORT, ()=>{
     console.log("IZI")
