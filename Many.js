@@ -6,15 +6,10 @@ res.json({status:"WORKING"})
 })
 
 
-const puppeteer = require("puppeteer-core")
+const puppeteer = require("puppeteer")
 const answer = require("prompt-sync")({sigint:true})
 let url_to_verify = answer("Digite o site desejado:")
-const browser = puppeteer.launch({
-    product:"chrome",
-    executablePath:path.resolve("./chrome-win/chrome.exe"),
-    headless:false, 
-    ignoreHTTPSErrors:true
-})
+const browser = puppeteer.launch()
 //<a class="btn btn-primary" href="https://www.xml-sitemaps.com/download/stackoverflow.com-59db74dd/sitemap.xml"><i class="material-icons">file_download</i> Download your XML sitemap file<div class="ripple-container"></div></a>
 browser.then(async(work)=>{
     const page = await work.newPage();
