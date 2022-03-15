@@ -5,7 +5,6 @@ app.get("/",(req,res)=>{
 res.json({status:"WORKING"})
 })
 
-
 const puppeteer = require("puppeteer")
 const answer = require("prompt-sync")({sigint:true})
 let url_to_verify = answer("Digite o site desejado:")
