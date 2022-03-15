@@ -11,7 +11,7 @@ const answer = require("prompt-sync")({sigint:true})
 let url_to_verify = answer("Digite o site desejado:")
 const browser = puppeteer.launch({
     product:"chrome",
-    executablePath:"C:/Users/Usuário/Downloads/Desktop/Puppte/chrome-win/chrome.exe",
+    executablePath:"./chrome-win/chrome.exe",
     headless:false, 
     ignoreHTTPSErrors:true
 })
