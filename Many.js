@@ -9,7 +9,8 @@ res.json({status:"WORKING"})
 const puppeteer = require("puppeteer")
 const answer = require("prompt-sync")({sigint:true})
 let url_to_verify = answer("Digite o site desejado:")
-const work = puppeteer.launch({
+(async()=>{
+const work = await puppeteer.launch({
 headless: true,
 args:['--no-sandbox-']
 })
@@ -83,7 +84,7 @@ args:['--no-sandbox-']
             console.log(r)
         })
         await words.dispose()
-
+})()
 app.listen(process.env.PORT, ()=>{
     console.log("IZI")
 })
