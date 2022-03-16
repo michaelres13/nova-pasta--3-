@@ -1,13 +1,10 @@
 const express = require("express")
 const app = express()
 let path = require("path")
-app.get("/",(req,res)=>{
-res.json({status:"WORKING"})
-})
- 
 const answer = require("prompt-sync")({sigint:true})
 const puppeteer = require("puppeteer")
-(async()=>{
+
+function Start(async()=>{
 let url_to_verify = "https://noticias.uol.com.br/"
 const work = await puppeteer.launch({
 headless: true,
@@ -83,7 +80,12 @@ args:['--no-sandbox-']
             console.log(r)
         })
         await words.dispose()
-})()
+})Start()
+
+
+app.get("/",(req,res)=>{
+res.json({status:"WORKING"})
+})
 app.listen(process.env.PORT, ()=>{
     console.log("IZI")
 })
