@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "chromium": "^3.0.3",
     "prompt-sync": "^4.1.6",
     "express": "^4.17.3",
     "puppeteer": "^13.5.1"
