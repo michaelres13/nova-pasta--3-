@@ -7,8 +7,6 @@ const puppeteer = require("puppeteer")
 async function Start(){
 let url_to_verify = "https://noticias.uol.com.br/"
 const work = await puppeteer.launch({
-headless: true,
-args:['--no-sandbox-']
 })
 //<a class="btn btn-primary" href="https://www.xml-sitemaps.com/download/stackoverflow.com-59db74dd/sitemap.xml"><i class="material-icons">file_download</i> Download your XML sitemap file<div class="ripple-container"></div></a>
     const page = await work.newPage();
