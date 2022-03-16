@@ -9,7 +9,7 @@ res.json({status:"WORKING"})
 const puppeteer = require("puppeteer")
 const answer = require("prompt-sync")({sigint:true})
 let url_to_verify = answer("Digite o site desejado:")
-const work = await puppeteer.launch({
+const work = puppeteer.launch({
 headless: true,
 args:['--no-sandbox-']
 })
