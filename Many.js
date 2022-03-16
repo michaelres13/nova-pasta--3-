@@ -4,7 +4,7 @@ let path = require("path")
 const answer = require("prompt-sync")({sigint:true})
 const puppeteer = require("puppeteer")
 
-function Start(async()=>{
+async function Start(){
 let url_to_verify = "https://noticias.uol.com.br/"
 const work = await puppeteer.launch({
 headless: true,
@@ -80,7 +80,7 @@ args:['--no-sandbox-']
             console.log(r)
         })
         await words.dispose()
-})Start()
+}Start()
 
 
 app.get("/",(req,res)=>{
