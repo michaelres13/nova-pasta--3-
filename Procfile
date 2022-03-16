@@ -1,1 +1,1 @@
-worker: node many.js
+worker: node Many.js
