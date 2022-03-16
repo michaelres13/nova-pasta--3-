@@ -5,11 +5,10 @@ app.get("/",(req,res)=>{
 res.json({status:"WORKING"})
 })
  
-
+const answer = require("prompt-sync")({sigint:true})
 const puppeteer = require("puppeteer")
 (async()=>{
- const answer = require("prompt-sync")({sigint:true})
-let url_to_verify = answer("Digite o site desejado:")
+let url_to_verify = "https://noticias.uol.com.br/"
 const work = await puppeteer.launch({
 headless: true,
 args:['--no-sandbox-']
